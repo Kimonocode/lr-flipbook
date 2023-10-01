@@ -1,0 +1,148 @@
+$white: #ffffff;
+$primary: #a0c8c7;
+$secondary: #998466;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+}
+
+h2 span, 
+a {
+    font-size: 14px;
+}
+
+a {
+    background-color: inherit;
+    color: rgb(14, 108, 91)
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.btn-next {
+    left:calc(100% - 115px)
+}
+
+
+.flip-book {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+    display: none;
+    background-size: cover;
+    margin: auto;
+  }
+  
+  .page {
+    padding: 20px;
+    background-color:$white;
+    color:$secondary;
+    overflow: hidden;
+  
+    .page-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+  
+      .page-header {
+        height: 30px;
+        font-size: 100%;
+        text-transform: uppercase;
+        text-align: center;
+      }
+  
+      .page-image {
+        height: 100%;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+  
+      .page-text {
+        height: 100%;
+        flex-grow: 1;
+        font-size: 80%;
+        text-align: justify;
+        margin-top: 10px;
+        padding-top: 10px;
+        box-sizing: border-box;
+        border-top: solid 1px $white;
+      }
+  
+      .page-footer {
+        height: 30px;
+        border-top: solid 1px $white;
+        font-size: 80%;
+        color:$secondary
+      }
+    }
+  
+    &.--left { // for left page (property will be added automatically)
+      border-right: 0;
+      box-shadow: inset -7px 0 30px -7px rgba(0, 0, 0, 0.4);
+    }
+  
+    &.--right { // for right page (property will be added automatically)
+      border-left: 0;
+      box-shadow: inset 7px 0 30px -7px rgba(0, 0, 0, 0.4);
+  
+      .page-footer {
+        text-align: right;
+      }
+    }
+  
+    &.hard { // for hard page
+      background-color: $white;
+      border: solid 1px $secondary;
+    }
+  
+    &.page-cover {
+      background-color:$primary;
+      color: $white;
+   
+      h2 {
+        text-align: center;
+        padding-top: 50%;
+        font-size: 210%;
+      }
+  
+      &.page-cover-top {
+        box-shadow: inset 0px 0 30px 0px rgba(36, 10, 3, 0.5), -2px 0 5px 2px rgba(0, 0, 0, 0.4);
+      }
+  
+      &.page-cover-bottom {
+        box-shadow: inset 0px 0 30px 0px rgba(36, 10, 3, 0.5), 10px 0 8px 0px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+  
+  
